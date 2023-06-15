@@ -1,0 +1,402 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root
+{
+    --Clr1: #031850;
+    --Clr2: #fff;
+    --baseClr: rgba(0,0,0,0.3);
+}
+
+body
+{
+    background: url(background_img.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section
+{
+    position: relative;
+    padding: 10px 30px;
+    background: rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(255,255,255,0.35);
+    border-left: 1px solid rgba(255,255,255,0.35);
+    border-radius: 6px;
+    box-shadow: 0 15px 25px rgba(0,0,0,0.15);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+}
+
+section header
+{
+    position: relative;
+    text-align: center;
+}
+
+section footer
+{
+    position: relative;
+    text-align: right;
+    margin: -15px;
+}
+
+header h1
+{
+    font-size: 2.7em;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--Clr1);
+}
+
+footer h4
+{
+    font-size: 0.8em;
+    color: #111;
+}
+
+section main
+{
+    position: relative;
+    margin-top: 40px;
+    margin-bottom: 8px;
+    padding: 6px;
+}
+
+main .container
+{
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 20px;
+}
+
+.container .inputBox
+{
+    position: relative;
+    width: 100%;
+    background: var(--baseClr);
+    padding: 6px;
+    border-radius: 25px;
+    transition: 0.5s;
+}
+
+.inputBox .keypoints
+{
+    background: #17354e;
+    padding: 6px;
+    margin-top: 10px;
+    border-radius: 20px;
+    box-shadow: 0 15px 25px rgba(0,0,0,0.15);
+    display: none;
+}
+
+.keypoints ul
+{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 6px 12px;
+    line-height: 25px;
+    margin-bottom: 0px;
+}
+
+.keypoints ul li
+{
+    position: relative;
+    list-style: none;
+    color: var(--Clr2);
+    font-size: 15px;
+    font-weight: 300;
+    transition: 0.5s;
+}
+
+.keypoints ul li.valid
+{
+    color: #95876e;
+}
+
+.keypoints ul li::before
+{
+    content: '\f192';
+    display: inline-flex;
+    width: 20px;
+    height: 10px;
+    margin-right: 8px;
+    font-family: fontAwesome;
+}
+
+.keypoints ul li.valid::before
+{
+    content: '\f00c';
+    color: #0f0;
+}
+
+.inputBox p .fa-check-circle
+{
+    position: absolute;
+    top: 5px;
+    left: -30px;
+    font-size: 1.6em;
+    color: #01e701
+}
+
+.inputBox #errFname b,
+.inputBox #errLname b,
+.inputBox #errPasswrd b,
+.inputBox #errPhNum b,
+.inputBox #errMail b,
+.inputBox #errCity b,
+.inputBox #errState b
+{
+    position: absolute;
+    left: -270px;
+    bottom: -62px;
+
+}
+
+.inputBox #errFname,
+.inputBox #errLname,
+.inputBox #errPasswrd,
+.inputBox #errPhNum,
+.inputBox #errMail,
+.inputBox #errCity,
+.inputBox #errState
+{
+    display: inline-flex;
+    justify-content: flex-end;
+    position: absolute;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+    color: #f00;
+    line-height: 11px;
+}
+
+.container .inputBox span
+{
+    position: absolute;
+    top: 4px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.container .inputBox span::before
+{
+    content: '\f06e';
+    font-family: fontAwesome;
+    font-size: 1.5em;    
+    color: #000;
+}
+
+.container .inputBox #showBtn.show::before
+{
+    content: '\f070';
+}
+
+.container .inputBox .symbol
+{
+    position: absolute;
+    top: 12px;
+    left: 15px;
+    font-size: 1.3em;
+    color: #a09176; 
+}
+
+.container .inputBox input
+{
+    position: relative;
+    width: 100%;
+    outline: none;
+    border: none;
+    padding: 5px 40px;
+    background: transparent;
+    color: var(--Clr2);
+    font-size: 17px; 
+}
+
+.container .selectionBox
+{
+    display: flex;
+    position: relative;
+    width: 100%;
+    padding: 8px 15px;
+    border-radius: 25px;
+    justify-content: space-between;
+}
+
+.selectionBox #errGender,
+.selectionBox #errCourses
+{
+    position: absolute;
+    margin: 25px 45px;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+    color: #f00;
+}
+
+.container .selectionBox label
+{
+    color: var(--Clr2);
+    font-size: 17px;
+    font-weight: 300;
+}
+
+.selectionBox .form-check-label::before
+{
+    position: absolute;
+    content: '';
+    top: 3px;
+    left: -25px;
+    width: 18px;
+    height: 18px;
+    background: #11859cb2;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.selectionBox .form-checkbox-label::before
+{
+    position: absolute;
+    content: '';
+    top: 3px;
+    left: -25px;
+    width: 18px;
+    height: 18px;
+    background: transparent;
+    border: 3px solid #6be5feb2;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.container .selectionBox span,
+.container .inputBox input::placeholder
+{
+    color: #c5bba9;
+    font-size: 17px;
+    font-weight: 400;
+}
+
+.container .selectionBox,
+.container .inputBox:nth-child(3),
+.container .inputBox:nth-child(4),
+.container .inputBox:nth-child(5)
+{
+    grid-column: 1 / span 2;
+}
+
+.inputBox label,
+.container .selectionBox input[type="checkbox"],
+.container .selectionBox input[type="radio"]
+{
+    display: none
+}
+
+.container input[type="radio"]:checked ~ .form-check-label::before
+{
+    width: 18px;
+	height: 18px;
+	box-shadow: inset 0 0 0 5px #0f0;
+}
+
+.container input[type="checkbox"]:checked ~ .form-checkbox-label::before
+{
+    top: 5px;
+    border-right: none;
+    border-top: none;
+    height: 10px;
+    transform: rotate(-45deg);
+    border-color: #33ff33;
+}
+
+.container input:focus ~ .keypoints
+{
+    display: block;
+}
+
+.inputBox .form-state
+{
+    position: relative;
+    width: 98%;
+    outline: none;
+    border: none;
+    padding: 5px 8px;
+    background: transparent;
+    color: var(--Clr2);
+    font-size: 17px; 
+}
+
+.inputBox .form-state option
+{
+    color: #000;
+}
+
+main .row
+{
+    position: relative;
+    display: flex;
+    margin: 45px 30px;
+    justify-content: space-between;
+}
+
+.row .reset
+{
+    padding: 7px 8px;
+    outline: none;
+    cursor: pointer;
+}
+
+.reset a
+{
+    font-size: 16px;
+    font-weight: 400;
+    color: #a7a7a7;
+    text-decoration: none;
+}
+
+.reset a:hover
+{
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.row input[type="Submit"]
+{
+    transform: scale(1.2);
+    width: 30%;
+    letter-spacing: 1.5px;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 500;
+    background: var(--Clr1);
+    color: var(--Clr2);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    /*box-shadow: 0 15px 25px rgba(0,0,0,0.15);*/
+    transition: 0.4s;
+}
+
+.row input[type="Submit"]:hover
+{
+    background: #032278;
+    letter-spacing: 1.7px;
+}

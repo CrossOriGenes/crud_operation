@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root
+{
+    --Clr1: #031850;
+    --Clr2: #fff;
+    --Clr3: rgba(225,225,225,0.5);
+    /*  #083030 -> dark turquoise */
+    /*  #3E0A2A -> dark magenta */
+}
+
+body
+{
+    background: url(background_img2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h1
+{
+    padding: 20px;
+    margin: 10px;
+    color: var(--Clr1);
+    text-transform: uppercase;
+    font-size: 3em;
+    text-align: center;
+    word-spacing: 1rem;
+}
+
+.table-records
+{
+    position: relative;
+    margin: 10px 85px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.table-records table
+{
+    position: relative;
+    border: 4px solid #333;
+    border-radius: 6px;
+    width: 100%;
+    backdrop-filter: blur(8px);
+}
+
+table th
+{
+    font-size: 20px;
+    color: var(--Clr2);
+    font-weight: 700;
+    padding: 6px;
+    background: #1e6969;
+    text-transform: uppercase;
+    border: 3px solid #444;
+}
+
+table td
+{
+    background: rgba(255, 255, 255, 0.35);
+    color: #000;
+    font-weight: 500;
+    padding: 4px 9px;
+    border: 2px solid #666;
+}
+
+table td:last-child
+{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: none;
+}
+
+table th:last-child
+{
+    border: none;
+    background-color: #004d99;
+}
+
+table td:first-child
+{
+    text-align: center;
+}
+
+td a
+{
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    padding: 3px 17px;
+    color: var(--Clr2);
+    font-size: 0.9em;
+    font-weight: 600;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.2s;
+    margin: auto 2px;
+}
+
+.updateBtn
+{
+    background-color: #000;
+}
+
+.updateBtn:hover
+{
+    background-color: #669999;
+    color: #000;
+}
+
+.deleteBtn
+{
+    background-color: #cf0000;
+}
+
+.deleteBtn:hover
+{
+    background-color: #f66060;
+    color: #000;
+}
+
+.table-records .inputBtn
+{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin: -50px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.inputBtn #addNew
+{
+    text-decoration: none;
+    padding: 4px 6px;
+    background-color: #3E0A2A;  /*var(--Clr1);*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: 0.5s;
+    transition-delay: 1s;
+}
+
+.inputBtn #addNew ion-icon
+{
+    color: var(--Clr2);
+    font-size: 2em;
+    font-weight: 400;
+    z-index: 4;
+    transition: 0.4s;
+}
+
+.inputBtn #addNew span
+{
+    display: none;
+    opacity: 0;
+    font-weight: 600;
+    font-size: 20px;
+    margin: auto 8px;
+    color: var(--Clr3);
+    transition: 0.6s;
+}
+
+.inputBtn #addNew:hover ion-icon
+{
+    transform: rotate(135deg);
+}
+
+.inputBtn #addNew:hover span
+{
+    display: inline-flex;
+    opacity: 1;
+}
